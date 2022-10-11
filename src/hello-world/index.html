@@ -4,31 +4,27 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hello, World!</title>
-  
+
   <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
   <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vtk.js"></script>
+  <link rel="stylesheet" 
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-    <script type="text/javascript">
-        // --------------------------------------------------------------------------
-        // Example code
-        // --------------------------------------------------------------------------
-        var fullScreenRenderer = vtk.Rendering.Misc.vtkFullScreenRenderWindow.newInstance();
-        var actor              = vtk.Rendering.Core.vtkActor.newInstance();
-        var mapper             = vtk.Rendering.Core.vtkMapper.newInstance();
-        var cone               = vtk.Filters.Sources.vtkConeSource.newInstance();
-      
-        actor.setMapper(mapper);
-        mapper.setInputConnection(cone.getOutputPort());
-      
-        var renderer = fullScreenRenderer.getRenderer();
-        renderer.addActor(actor);
-        renderer.resetCamera();
-      
-        var renderWindow = fullScreenRenderer.getRenderWindow();
-        renderWindow.render();
-      </script>
-  <py-script src="src/hello-world/hello-world.py"></py-script>
+  <div class="jumbotron">
+    <h1>Hellow World</h1>
+    <p class="lead">
+        <!-- Some graphs about the weather in London in 2020<br/> -->
+        <a href="../../index.html">Go Home</a>
+    </p>
+  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-2"><h6>Output of Python file (42 x Hello World!):</h6></div>
+    <div class="col-10"><p>
+      <py-script src="./hello-world.py"></py-script>
+    </p></div>
+  </div>
+</div>
 </body>
 </html>

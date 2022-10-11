@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" 
+            href="https://pyscript.net/alpha/pyscript.css" />
+        <script defer 
+            src="https://pyscript.net/alpha/pyscript.js">
+        </script>
+        <link rel="stylesheet" 
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+            <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+
+            
+        <py-env>
+            - matplotlib
+            - pandas
+            - plotly
+            - paths:
+               - programming-languages.csv
+        </py-env>
+
+
+    </head>
+<body>
+    <div class="jumbotron">
+        <h1>Programming Languages Search Queries</h1>
+        <p class="lead">
+            Programming languages searched on Google over the last 5 years plotted with their percentage of relative popularity against a specific week<br/>
+            <a href="../../index.html">Go Home</a>
+        </p>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 p-2 ml-4 mb-1">
+            Select language from list:
+        </div>
+        <div class="col-sm-4 p-2 mr-4 mb-1">
+            <select class="form-control" id="select">
+                <option value="Python: (South Africa)">Python</option>   
+                <option value="Go: (South Africa)">Go</option> 
+                <option value="Rust: (South Africa)">Rust</option>   
+                <option value="Java: (South Africa)">Java</option> 
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 p-2 shadow ml-4 mr-4 mb-4 bg-white rounded">
+            <div id="chart1"></div>
+        </div>
+    </div>
+
+
+    <script type='text/javascript'>
+        function plot(graph, chart) {
+            var figure = JSON.parse(graph)
+            Plotly.newPlot(chart, figure, {});
+        }
+    </script>
+    <py-script src="./graph.py"></py-script>
+</body>
+</html>
+

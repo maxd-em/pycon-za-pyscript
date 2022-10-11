@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <link rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Sandbox</title>
+</head>
+<body>
+    <div class="jumbotron">
+        <h1>Sandbox</h1>
+        <p class="lead">
+            <a href="../../index.html">Go Home</a>
+        </p>
+    </div>
+    <div class="column">
+        <div class="row">
+            <div class="col">
+
+    
+    <py-env>
+        - matplotlib
+        - numpy
+      </py-env>
+      <py-script>
+        import matplotlib.pyplot as plt
+        import numpy as np
+        
+        time = np.linspace(0, 2 * np.pi, 100)
+        plt.plot(time, np.sin(time))
+        plt
+      </py-script>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
